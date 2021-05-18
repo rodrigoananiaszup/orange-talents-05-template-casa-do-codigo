@@ -19,14 +19,6 @@ import br.zupacademy.rodrigoananias.casadocodigo.validacao.EmailDuplicadoValidat
 @RequestMapping("/autores")
 public class AutorController {
 
-	@Autowired
-	private EmailDuplicadoValidator emailDuplicadoValidator;
-
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(emailDuplicadoValidator);
-	}
-
 	// Encapsulamento
 	@PersistenceContext
 	private EntityManager em;

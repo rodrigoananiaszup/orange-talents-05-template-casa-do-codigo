@@ -21,11 +21,6 @@ public class CategoriaDto {
 		this.nome = nome;
 	}
 
-	// GETTERS E SETTERS
-	public String getNome() {
-		return nome;
-	}
-
 	public Categoria toModel() {
 		return new Categoria(this.nome);
 	}
