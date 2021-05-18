@@ -36,6 +36,11 @@ public class Autor {
 
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 
+	@Deprecated
+	public Autor() {
+
+	}
+
 	// construtor
 	public Autor(@NotBlank String nome, @Email @NotBlank String email, @NotBlank @Size(max = 400) String descricao) {
 		super();
@@ -43,7 +48,6 @@ public class Autor {
 		this.email = email;
 		this.descricao = descricao;
 	}
-
 
 	// Sobrescrita
 	@Override
