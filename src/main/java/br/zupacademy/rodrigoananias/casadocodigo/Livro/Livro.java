@@ -26,7 +26,7 @@ import br.zupacademy.rodrigoananias.casadocodigo.Categoria.Categoria;
 @Table(name = "livros")
 public class Livro {
 
-	//ATRIBUTOS
+	// ATRIBUTOS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -37,12 +37,12 @@ public class Livro {
 	private Integer paginas;
 	private String isbn;
 	private LocalDate dataPublicacao;
-	
-	//MUITOS LIVROS PARA UMA CATEGORIA
+
+	// MUITOS LIVROS PARA UMA CATEGORIA
 	@ManyToOne
 	private Categoria idCategoria;
-	
-	//MUITOS LIVROS PARA UM AUTOR
+
+	// MUITOS LIVROS PARA UM AUTOR
 	@ManyToOne
 	private Autor idAutor;
 
@@ -50,7 +50,7 @@ public class Livro {
 	public Livro() {
 	}
 
-	//CONSTRUTOR
+	// CONSTRUTOR
 	public Livro(String titulo, String resumo, String sumario, BigDecimal preco, Integer paginas, String isbn,
 			LocalDate dataPublicacao, Categoria idCategoria, Autor idAutor) {
 		this.titulo = titulo;
@@ -64,8 +64,7 @@ public class Livro {
 		this.idAutor = idAutor;
 	}
 
-
-	//SOBESCRITA
+	// SOBESCRITA
 	@Override
 	public String toString() {
 		return "Livro [id=" + id + ", titulo=" + titulo + ", resumo=" + resumo + ", sumario=" + sumario + ", preco="
@@ -73,49 +72,4 @@ public class Livro {
 				+ ", idCategoria=" + idCategoria + ", idAutor=" + idAutor + "]";
 	}
 
-	//GETTERS E SETTERS
-	public Long getId() {
-		return id;
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public String getResumo() {
-		return resumo;
-	}
-
-	public String getSumario() {
-		return sumario;
-	}
-
-	public BigDecimal getPreco() {
-		return preco;
-	}
-
-	public int getPaginas() {
-		return paginas;
-	}
-
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public LocalDate getDataPublicacao() {
-		return dataPublicacao;
-	}
-
-	public Categoria getIdCategoria() {
-		return idCategoria;
-	}
-
-	public Autor getIdAutor() {
-		return idAutor;
-	}
-
-	public void setDataPublicacao(LocalDate dataPublicacao) {
-		this.dataPublicacao = dataPublicacao;
-	}
-	
 }
