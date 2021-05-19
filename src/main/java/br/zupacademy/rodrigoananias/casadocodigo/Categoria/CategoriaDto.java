@@ -2,6 +2,8 @@ package br.zupacademy.rodrigoananias.casadocodigo.Categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import br.zupacademy.rodrigoananias.casadocodigo.validacao.UniqueValue;
 
 //Classe que realiza a requisição
@@ -17,6 +19,7 @@ public class CategoriaDto {
 	}
 
 	// CONSTRUTOR
+	@JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
 	public CategoriaDto(@NotBlank String nome) {
 		this.nome = nome;
 	}
