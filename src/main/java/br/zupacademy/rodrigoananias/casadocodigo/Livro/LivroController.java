@@ -44,13 +44,11 @@ public class LivroController {
 	public ResponseEntity<Iterable<Livro>> listar() {
 		return ResponseEntity.ok(livroRepository.findAll());
 	}
-	
-	@GetMapping("/{id}")
-	public ResponseEntity<Livro> getById(@PathVariable Long id){
-		return livroRepository.findById(id)
-				.map(resp-> ResponseEntity.ok(resp))
-						.orElse(ResponseEntity.notFound().build());
-	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity<Livro> getById(@PathVariable Long id) {
+		return livroRepository.findById(id).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
+	}
 
 }

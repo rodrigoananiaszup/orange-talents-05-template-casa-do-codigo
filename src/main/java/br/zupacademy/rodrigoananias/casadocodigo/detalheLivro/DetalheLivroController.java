@@ -14,22 +14,21 @@ import br.zupacademy.rodrigoananias.casadocodigo.Livro.Livro;
 @RestController
 @RequestMapping("/produtos")
 public class DetalheLivroController {
-		
+
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<?> detalhar(@PathVariable("id") Long id) {
-		
+	public ResponseEntity<?> detalhar(@PathVariable Long id) {
+
 		Livro buscaLivro = em.find(Livro.class, id);
-		
-		
-		if(buscaLivro == null) {
+
+		if (buscaLivro == null) {
 			return ResponseEntity.notFound().build();
 		}
-		
+
 		DetalheLivroResponse detalheLivroResponse = new DetalheLivroResponse(buscaLivro);
-		
+
 		return ResponseEntity.ok(detalheLivroResponse);
 	}
 }
