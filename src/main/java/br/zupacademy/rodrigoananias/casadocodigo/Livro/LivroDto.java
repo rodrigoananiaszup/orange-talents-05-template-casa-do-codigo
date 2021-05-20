@@ -87,6 +87,8 @@ public class LivroDto {
 	}
 
 	// GETTERS E SETTERS
+	
+	
 
 	// SOBRESCRITA
 
@@ -104,5 +106,41 @@ public class LivroDto {
 
 		return new Livro(this.titulo, this.resumo, this.sumario, this.preco, this.paginas, this.isbn,
 				this.dataPublicacao, categoria, autor);
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public String getResumo() {
+		return resumo;
+	}
+
+	public String getSumario() {
+		return sumario;
+	}
+
+	public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public Integer getPaginas() {
+		return paginas;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public LocalDate getDataPublicacao() {
+		return dataPublicacao;
+	}
+
+	public Long getIdCategoria() {
+		return idCategoria;
+	}
+
+	public Long getIdAutor() {
+		return idAutor;
 	}
 }

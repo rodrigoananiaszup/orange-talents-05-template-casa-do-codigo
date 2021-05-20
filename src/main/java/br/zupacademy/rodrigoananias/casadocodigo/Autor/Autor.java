@@ -40,6 +40,38 @@ public class Autor {
 	public Autor() {
 
 	}
+	
+	//Getters
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+
+
+	public LocalDateTime getDataCriacao() {
+		return dataCriacao;
+	}
+
+
 
 	// construtor
 	public Autor(@NotBlank String nome, @Email @NotBlank String email, @NotBlank @Size(max = 400) String descricao) {
